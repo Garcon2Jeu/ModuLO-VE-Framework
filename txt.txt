@@ -1,0 +1,6 @@
+ModuleManager
+    - Load libraries in a global variable
+    - Holds util methods such as extractMLethods, getModule , updateModuleList(?)
+
+ModulableModule
+    - Give classes access to plug / unplug / find 
