@@ -6,4 +6,4 @@ require "ModuleManager"
 require "modules.CoordinatesModule"
 
 
--- return ModuleManager()
+return ModuleManager()
