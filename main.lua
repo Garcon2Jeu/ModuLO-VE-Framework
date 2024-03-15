@@ -1,30 +1,32 @@
 ModuleManager = require "ModuLÖVE"
-ModuleManager:loadBundle({
-    {
-        ["Coordinates"] = CoordinatesModule,
-        ["Coordinates2"] = CoordinatesModule
-    },
-    {
-        ["Coordinates3"] = CoordinatesModule,
-        ["Coordinates4"] = CoordinatesModule
+ModuleManager:loadBundle {
+    ["Coordinates"] = CoordinatesModule,
+    ["Dimensions"] = DimensionsModule,
+}
+
+local T = Class { __includes = Modular }
+
+function T:init()
+    -- self:plug("Coordinates", { x = 6748, y = 0 })
+    local def = {
+        x = 6748,
+        y = 0,
+        width = 16,
+        height = 20
     }
-})
 
-local t = {}
-
-for name, module in pairs(ModuleManager.modules) do
-    table.insert(t, name)
+    self:plugInBulk(def, { "Coordinates", "Dimensions" })
 end
+
+local t = T()
+t:unplugInBulk { "Dimensions" }
 
 function love.load()
 end
 
 function love.draw()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
-    local y = 10
-    for name, module in pairs(ModuleManager.modules) do
-        love.graphics.print(tostring(name), 50, y)
-        y = y + 15
-    end
+    love.graphics.print(tostring(t.width), 50, 50)
+    love.graphics.print(tostring(t.x), 50, 70)
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
 end

@@ -19,6 +19,8 @@ function table.indexOfValue(t, targetValue)
             return index
         end
     end
+
+    return false
 end
 
 -- Only works with arrays (keys are consecutive integers)
