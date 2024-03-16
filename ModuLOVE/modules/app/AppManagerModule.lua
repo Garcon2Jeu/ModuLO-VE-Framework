@@ -1,4 +1,4 @@
----@class AppManagerModule
+---@class AppManagerModule: Module
 AppManagerModule = Class { __includes = Module }
 AppManagerModule.fieldNames = {}
 

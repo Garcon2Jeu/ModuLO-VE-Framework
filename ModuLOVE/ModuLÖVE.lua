@@ -9,8 +9,13 @@ require "ModuLOVE.Module"
 require "ModuLOVE.Modular"
 
 ---Modules
+
+---App
+require "ModuLOVE.modules.app.AppManagerModule"
+require "ModuLOVE.modules.app.InputModule"
+
+---Essentials
 require "ModuLOVE.modules.CoordinatesModule"
 require "ModuLOVE.modules.DimensionsModule"
-require "ModuLOVE.modules.app.AppManagerModule"
 
 return ModuleManager()
