@@ -13,11 +13,14 @@ require "ModuLOVE.Modular"
 ---App
 require "ModuLOVE.modules.app.AppManagerModule"
 require "ModuLOVE.modules.app.InputModule"
-require "ModuLOVE.modules.app.StateMachineModule"
-require "ModuLOVE.modules.app.BaseState"
+
+---StateMachine
+require "ModuLOVE.modules.StateMachine.StateMachineModule"
+require "ModuLOVE.modules.StateMachine.State"
 
 ---Essentials
 require "ModuLOVE.modules.CoordinatesModule"
 require "ModuLOVE.modules.DimensionsModule"
+
 
 return ModuleManager()

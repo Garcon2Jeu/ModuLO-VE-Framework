@@ -13,6 +13,11 @@ function InputModule:init()
     self.canInput = true
 end
 
+--- Copy this block of code in your main.lua file to enable the InputMudle
+-- function love.keypressed(key)
+--     App:pressKey(key)
+-- end
+
 ---When a keypress is triggerred from "love.keypressed(key)" and if the field .canInput is true, <br>
 ---stores the pressed key in the field ".keysPressed" making it usable elsewhere.
 --- Also returns ".canInput"
