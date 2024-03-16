@@ -1,10 +1,10 @@
+---@class Modular Class for a Modular Object
+---@field modules table<string> names of plugged Modules
 Modular = Class()
 
--- Description:
----- Plugs individual Module to self by adding all fields and methods
--- Requires:
----- moduleName = string, name of the Module
----- def = table, defines all parameters of the module's fields
+---Plugs individual Module to self by adding all fields and methods
+---@param moduleName string name of the Module
+---@param def table defines all parameters of the module's fields
 function Modular:plug(moduleName, def)
     local module = ModuleManager:getModule(moduleName)
 
@@ -13,33 +13,28 @@ function Modular:plug(moduleName, def)
     ModuleManager.updateModulesList(self, moduleName)
 end
 
--- Description:
----- Plugs multiple Modules at once using the ":plug()" method
--- Requires:
----- def = table, defines all parameters of the module's fields.
----- Every field of all modules must be different because all parameters are mixed together
----- modulesNames = table, name of the Modules requested
+---Plugs multiple Modules at once using the ":plug()" method
+---@param def table defines all parameters of the module's fields. <br>
+---Every field of all modules must be different because all parameters are mixed together
+---@param modulesNames table name of the Modules requested
 function Modular:plugInBulk(def, modulesNames)
     for key, moduleName in pairs(modulesNames) do
         self:plug(moduleName, def)
     end
 end
 
--- Description:
----- If object has requested Module, returns its index value in the ".modules" table
----- Else if the ".modules" table or object does not have requested Module, returns false
--- Requires:
----- moduleName = string, name of the Module
+--- If object has requested Module, returns its index value in the ".modules" table. <br>
+--- Else if the ".modules" table or object does not have requested Module, returns false
+---@param moduleName string name of the Module
+---@return boolean|integer
 function Modular:findModule(moduleName)
     return self.modules and table.indexOfValue(self.modules, moduleName)
 end
 
--- Description:
----- Unplugs requested Module
----- Warning! Doesn't remove fields, only "nils" their value
----- (before: object.key = "value" -> after: object.key = nil)
--- Requires:
----- moduleName = string, name of the Module
+---Unplugs requested Module <br>
+---Warning! Doesn't remove fields, only "nils" their value <br>
+---(before: object.key = "value" -> after: object.key = nil)
+---@param moduleName string name of the Module
 function Modular:unplug(moduleName)
     for key, value in pairs(ModuleManager:getModule(moduleName)) do
         self[key] = nil
@@ -52,10 +47,8 @@ function Modular:unplug(moduleName)
     table.removeByValue(self.modules, moduleName)
 end
 
--- Description:
----- Unplugs multiple Modules at once using the ":unplug()" method
--- Requires:
----- modulesNames = table, name of the Modules requested
+---Unplugs multiple Modules at once using the ":unplug()" method
+---@param moduleNames table name of the Modules requested
 function Modular:unplugInBulk(moduleNames)
     for key, moduleName in pairs(moduleNames) do
         self:unplug(moduleName)
