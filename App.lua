@@ -1,7 +1,8 @@
 App = Class { __includes = Modular }
 
 function App:init()
-    self:plugInBulk { "AppManager", "Input" }
+    self:plugInBulk({ "AppManager", "Input" })
+
     self.seedRandom()
     self.setupWindow {
         windowTitle = "Test",
