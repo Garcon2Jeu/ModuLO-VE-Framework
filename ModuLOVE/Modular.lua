@@ -4,7 +4,7 @@ Modular = Class()
 
 ---Plugs individual Module to self by adding all fields and methods
 ---@param moduleName string name of the Module
----@param def table defines all parameters of the module's fields
+---@param def? table defines all parameters of the module's fields
 function Modular:plug(moduleName, def)
     local module = ModuleManager:getModule(moduleName)
 
@@ -14,10 +14,10 @@ function Modular:plug(moduleName, def)
 end
 
 ---Plugs multiple Modules at once using the ":plug()" method
----@param def table defines all parameters of the module's fields. <br>
----Every field of all modules must be different because all parameters are mixed together
 ---@param modulesNames table name of the Modules requested
-function Modular:plugInBulk(def, modulesNames)
+---@param def? table defines all parameters of the module's fields. <br>
+---Every field of all modules must be different because all parameters are mixed together
+function Modular:plugInBulk(modulesNames, def)
     for key, moduleName in pairs(modulesNames) do
         self:plug(moduleName, def)
     end

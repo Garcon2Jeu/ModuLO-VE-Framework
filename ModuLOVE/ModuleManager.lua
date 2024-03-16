@@ -9,23 +9,24 @@ end
 
 ---Loads single Module into ModuleManager, to use for all Modules intended in the project.
 ---@param moduleName string name of the Module.
----@param moduleClass Module un-instanciated. @source ModuLÖVE.lua
-function ModuleManager:load(moduleName, moduleClass)
-    self.modules[moduleName] = function() return moduleClass end
+---@param module Module un-instanciated.
+function ModuleManager:load(moduleName, module)
+    self.modules[moduleName] = function() return module end
 end
 
 ---Recursively loads multiple modules at once.
 ---@param modulesTable table<string, Module> Table of moduleClasses with their name as keys
 function ModuleManager:loadBundle(modulesTable)
-    for moduleName, moduleClass in pairs(modulesTable) do
+    for moduleName, module in pairs(modulesTable) do
         if type(moduleName) == "string" then
-            self:load(moduleName, moduleClass)
+            self:load(moduleName, module)
         else
-            self:loadBundle(moduleClass)
+            self:loadBundle(module)
         end
     end
 end
 
+---@package
 ---DO NOT USE this method on its own, it is wrapped in the :plug() method in the Modular class <br>
 ---Extracts methods from one class to targeted class.
 ---@param from Module from where the method are extracted
@@ -36,6 +37,7 @@ function ModuleManager.extractMethods(from, to)
     end
 end
 
+---@package
 --- DO NOT USE this method on its own, it is wrapped in the :plug() method in the Modular class <br>
 --- Creates if necessary the ".modules" table and adds the names of the Module currently being plugged
 ---@param modular Modular instanciated object, in which the ".modules" table will be create and/or updated
@@ -45,10 +47,11 @@ function ModuleManager.updateModulesList(modular, moduleName)
     table.insert(modular.modules, moduleName)
 end
 
+---@package
 ---DO NOT USE this method on its own, it is wrapped in the :plug() method in the Modular class <br>
 ---Asserts the requested Module in the ".modules" table and returns it
 ---@param moduleName string name of the Module
----@return Module moduleClass un-instanciated. @source ModuLÖVE.lua
+---@return Module module un-instanciated. @source ModuLÖVE.lua
 function ModuleManager:getModule(moduleName)
     assert(self.modules[moduleName])
     return self.modules[moduleName]()

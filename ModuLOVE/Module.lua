@@ -4,7 +4,7 @@ Module = Class()
 
 ---Constructor
 ---@param self Module|Modular
----@param def table holds all parameters
+---@param def? table holds all parameters
 function Module:init(def) end
 
 ---Sets fieldNames, used for unplugging Modules
