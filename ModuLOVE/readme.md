@@ -206,3 +206,5 @@ self:unplug(object, "Coordinates")
 ```
 self:unplugInBulk(object, {"Coordinates", "Dimensions"})
 ```
+
+Now That we've seen how to use the ModuleManager, Module and Modular file, I suggeststarting to read  how to use each module, starting the AppManagerModule and the InputModule. You can find them in the ModuLOVE/modules/app directory.

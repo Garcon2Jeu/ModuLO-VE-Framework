@@ -21,9 +21,11 @@ function love.update(dt)
 end
 
 function love.draw()
+    Push:start()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
     -- love.graphics.print(tostring(table.count(States.states)), 50, 70)
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
+    Push:finish()
 end
 
 function love.keypressed(key)

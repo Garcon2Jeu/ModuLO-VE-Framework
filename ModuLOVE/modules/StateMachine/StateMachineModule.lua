@@ -1,4 +1,4 @@
----@class StateMachineModule
+---@class StateMachineModule: Module
 StateMachineModule = Class { __includes = Module }
 
 StateMachineModule.fieldNames = {
@@ -8,7 +8,7 @@ StateMachineModule.fieldNames = {
 }
 
 ---Enables a StateMachine. <br> <br>
---- Remember that you can instanciat this class as any other Module as a standalone object <br>
+--- Remember that you can instanciate this class as any other Module as a standalone object <br>
 --- (ex: local StateMachine = StateMachineModule(def))
 ---@param def table holds all following parameters
 --- [states]: table holds all the States to be loaded in the following format: <br>

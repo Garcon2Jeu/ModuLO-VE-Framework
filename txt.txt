@@ -4,3 +4,7 @@ ModuleManager
 
 ModulableModule
     - Give classes access to plug / unplug / find 
+
+To do:
+- Module Creation tutorial
+- Credits to third party libraries
