@@ -1,8 +1,8 @@
 # App Bundle
 
-Here you'll find useful module to quickly set up your project, let's get into it!
+Here you'll find useful modules to quickly set up your project, let's get into it!
 
-I suggest creating a standalone file called App (or whatever) and plugging these two modules to group all things "technical in the same place. you'll find a template below.
+I suggest creating a standalone file called App (or whatever) and plugging these two modules to group all things "technical in the same place. You'll find a template below.
 
 ## AppManagerModule
 
@@ -33,7 +33,7 @@ function love.keypressed(key)
 end
 ```
 
-When the player presses a key, Love sends that key to its method, then to ours. The ":pressKey()" method then adds a new element to the ".keysPressed" field with its key as the name of the key and its value to "true":
+When the player presses a key, Love sends that key to its method, then to ours. The ":pressKey()" method then adds a new element to the ".keysPressed" field with its (keyboard) key as the name of the key and its value to "true":
 
 ```
 App.keysPressed["space"] = true
