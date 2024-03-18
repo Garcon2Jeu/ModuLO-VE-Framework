@@ -71,11 +71,11 @@ function AssetsManagerModule:import(category, fileName, customExtension, setting
     return self.categories[category].callback(filePath, settings)
 end
 
---- To import multiple files of the same category at the same time
+--- Imports multiple files of the same category at once.
 ---@param category string category of asset established in the ":init()" method (ex: "audio")
----@param filesData table holds all the data needed to use the ":import()" method in a table where each element is: <br> <br>
+---@param filesData table holds all the data needed to use the ":import()" method <br> <br>
 --- if a file doesn't need any additionnal parameters (customExtension or settings) then you can add only its fileName <br>
----if a file needs them, it's file name will be the key of the elements, and the parameters have to stored in an array.<br> <br>
+---if a file needs them, its file name will be the key of the elements, and the parameters have to be stored in an array.<br> <br>
 ---(ex: AssetsManagerModule:importBatch("graphics",{ <br>
 ---        "tiles", <br>
 ---        ["avatar.jpg"] = {customExtension = true, settings = {mipmaps = false, linear = true}} <br>
