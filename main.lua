@@ -14,14 +14,7 @@ Assets = AssetsManagerModule()
 Quads = QuadManagerModule()
 
 local atlas = Assets:import("graphics", "pink_alien")
-
--- local quad = QuadManagerModule.getSet(atlas, 16, 20, Quads.getQuadCoordinates(0, 0, 11, 1, 16, 20))
-
-local tile = { width = 16, height = 20 }
-local set = { x = 0, y = 0, columns = 11, rows = 1 }
-local quad = Quads:cutSet(atlas, tile, set)
-
--- local quad = Quads:cutSet(atlas, tiles, set)
+local setsOfQuads = Quads:getSetsOfQuads(atlas, 16, 20)
 
 function love.load()
 end
@@ -34,8 +27,7 @@ end
 function love.draw()
     Push:start()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
-    -- love.graphics.print(tostring(quad[5].x), 50, 70)
-    love.graphics.draw(atlas, quad[11])
+    love.graphics.draw(atlas, setsOfQuads[1])
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
     Push:finish()
 end

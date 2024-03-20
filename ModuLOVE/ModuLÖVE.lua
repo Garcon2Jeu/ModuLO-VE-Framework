@@ -24,7 +24,9 @@ require "ModuLOVE.modules.CoordinatesModule"
 require "ModuLOVE.modules.DimensionsModule"
 
 ---@class Image Drawable image type.
----@field getDimensions function function
+---@field getDimensions function
+---@field getWidth function
+---@field getHeight function
 ---@class Source represents audio you can play back.
 ---@class Font Defines the shape of characters that can be drawn onto the screen.
 
