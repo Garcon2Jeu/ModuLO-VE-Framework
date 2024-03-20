@@ -13,6 +13,7 @@ require "ModuLOVE.Modular"
 require "ModuLOVE.modules.app.AppManagerModule"
 require "ModuLOVE.modules.app.InputModule"
 require "ModuLOVE.modules.app.AssetsManagerModule"
+require "ModuLOVE.modules.app.QuadManagerModule"
 
 ---StateMachine
 require "ModuLOVE.modules.StateMachine.StateMachineModule"
@@ -23,6 +24,7 @@ require "ModuLOVE.modules.CoordinatesModule"
 require "ModuLOVE.modules.DimensionsModule"
 
 ---@class Image Drawable image type.
+---@field getDimensions function function
 ---@class Source represents audio you can play back.
 ---@class Font Defines the shape of characters that can be drawn onto the screen.
 

@@ -8,3 +8,4 @@ ModulableModule
 To do:
 - Module Creation tutorial
 - Credits to third party libraries
+- Colors in AssetsManagerModule
