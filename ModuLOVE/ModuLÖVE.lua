@@ -5,6 +5,7 @@ Class = require "ModuLOVE.libraries.class"
 ---@class Timer
 ---@field every function
 ---@field remove function
+---@field update function
 Timer = require "ModuLOVE.libraries.knife.timer"
 require "ModuLOVE.libraries.tableUtils"
 
@@ -34,6 +35,9 @@ require "ModuLOVE.modules.essentials.DimensionsModule"
 --Texture
 require "ModuLOVE.modules.texture.TextureModule"
 require "ModuLOVE.modules.texture.AnimationModule"
+--Move
+require "ModuLOVE.modules.movement.MoveModule"
+
 
 ---@class Image Drawable image type.
 ---@field getDimensions function

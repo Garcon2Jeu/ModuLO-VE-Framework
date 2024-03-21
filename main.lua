@@ -10,6 +10,7 @@ ModuleManager:loadBundle {
     ["Dimensions"]   = DimensionsModule,
     ["Texture"]      = TextureModule,
     ["Animation"]    = AnimationModule,
+    ["Move"]         = MoveModule
 
 }
 
@@ -29,6 +30,15 @@ end
 function love.update(dt)
     Timer.update(dt)
 
+    if love.keyboard.isDown("right") then
+        object:move(dt, "x")
+    elseif love.keyboard.isDown("left") then
+        object:move(dt, "x", -object.xSpeed)
+    elseif love.keyboard.isDown("down") then
+        object:move(dt, "y")
+    elseif love.keyboard.isDown("up") then
+        object:move(dt, "y", -object.ySpeed)
+    end
     -- object:animate()
     App:update()
     App:flushKeys()
@@ -37,7 +47,7 @@ end
 function love.draw()
     Push:start()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
-    love.graphics.print(tostring(object.width))
+    -- love.graphics.print(tostring(object.width))
     object:draw()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
     Push:finish()
