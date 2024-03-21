@@ -16,12 +16,12 @@ require "ModuLOVE.modules.app.AssetsManagerModule"
 require "ModuLOVE.modules.app.QuadManagerModule"
 
 ---StateMachine
-require "ModuLOVE.modules.StateMachine.StateMachineModule"
-require "ModuLOVE.modules.StateMachine.State"
+require "ModuLOVE.modules.stateMachine.StateMachineModule"
+require "ModuLOVE.modules.stateMachine.State"
 
 ---Essentials
-require "ModuLOVE.modules.CoordinatesModule"
-require "ModuLOVE.modules.DimensionsModule"
+require "ModuLOVE.modules.essentials.CoordinatesModule"
+require "ModuLOVE.modules.essentials.DimensionsModule"
 
 ---@class Image Drawable image type.
 ---@field getDimensions function

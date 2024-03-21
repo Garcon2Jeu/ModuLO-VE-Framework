@@ -1,11 +1,14 @@
 ModuleManager = require "ModuLOVE.ModuLÖVE"
+
 ModuleManager:loadBundle {
-    ["Coordinates"]  = CoordinatesModule,
-    ["Dimensions"]   = DimensionsModule,
     ["AppManager"]   = AppManagerModule,
     ["Input"]        = InputModule,
     ["StateMachine"] = StateMachineModule,
-    ["AssetManager"] = AssetsManagerModule
+    ["AssetManager"] = AssetsManagerModule,
+    ["QuadManager"]  = QuadManagerModule,
+    ["Coordinates"]  = CoordinatesModule,
+    ["Dimensions"]   = DimensionsModule,
+
 }
 
 require "App"
