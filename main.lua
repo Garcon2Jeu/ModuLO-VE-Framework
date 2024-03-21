@@ -8,7 +8,8 @@ ModuleManager:loadBundle {
     ["QuadManager"]  = QuadManagerModule,
     ["Coordinates"]  = CoordinatesModule,
     ["Dimensions"]   = DimensionsModule,
-    ["Texture"]      = TextureModule
+    ["Texture"]      = TextureModule,
+    ["Animation"]    = AnimationModule,
 
 }
 
@@ -26,6 +27,9 @@ function love.load()
 end
 
 function love.update(dt)
+    Timer.update(dt)
+
+    -- object:animate()
     App:update()
     App:flushKeys()
 end

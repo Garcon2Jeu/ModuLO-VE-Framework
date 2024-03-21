@@ -1,6 +1,7 @@
 ---@class TextureModule implements the fields and methods for objects with an atlas/spritesheet and/or a quad
 ---@field atlas Image
----@field quad Quad
+---@field set Quad[] full library of quads for the object
+---@field quad Quad current quad which will be drawn on screen
 ---@field r number Orientation (radians).
 ---@field sx number Scale factor (x-axis).
 ---@field sy number Scale factor (y-axis).
@@ -29,8 +30,9 @@ function TextureModule:init(def)
     self.kx    = def.kx or 0
     self.ky    = def.ky or 0
 
-    if def.quad then
-        self.quad = def.quad
+    if def.set then
+        self.set = def.set
+        self.quad = def.quad or self.set[1]
         self.draw = self:overrideDraw()
     end
 end
