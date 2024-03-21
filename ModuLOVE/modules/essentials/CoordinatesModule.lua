@@ -1,4 +1,4 @@
-CoordinatesModule = Class()
+CoordinatesModule = Class { __includes = Modular }
 
 
 CoordinatesModule.fieldNames = {
@@ -15,6 +15,14 @@ function CoordinatesModule:setX(x)
     self.x = x
 end
 
+function CoordinatesModule:getX()
+    return self.x
+end
+
 function CoordinatesModule:setY(y)
     self.y = y
+end
+
+function CoordinatesModule:getY()
+    return self.y
 end

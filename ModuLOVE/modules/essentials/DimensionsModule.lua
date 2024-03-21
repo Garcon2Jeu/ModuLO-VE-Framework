@@ -1,4 +1,4 @@
-DimensionsModule = Class()
+DimensionsModule = Class { __includes = Modular }
 
 
 DimensionsModule.fieldNames = {
@@ -16,6 +16,14 @@ function DimensionsModule:setWidth(width)
     self.width = width
 end
 
+function DimensionsModule:getWidth()
+    return self.width
+end
+
 function DimensionsModule:setHeight(height)
     self.height = height
+end
+
+function DimensionsModule:getHeight()
+    return self.height
 end
