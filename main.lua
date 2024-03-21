@@ -8,6 +8,7 @@ ModuleManager:loadBundle {
     ["QuadManager"]  = QuadManagerModule,
     ["Coordinates"]  = CoordinatesModule,
     ["Dimensions"]   = DimensionsModule,
+    ["Texture"]      = TextureModule
 
 }
 
@@ -16,8 +17,10 @@ App = App()
 Assets = AssetsManagerModule()
 Quads = QuadManagerModule()
 
-local atlas = Assets:import("graphics", "pink_alien")
-local setsOfQuads = Quads:getSetsOfQuads(atlas, 16, 20)
+require "object"
+
+local object = Object()
+
 
 function love.load()
 end
@@ -30,7 +33,8 @@ end
 function love.draw()
     Push:start()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
-    love.graphics.draw(atlas, setsOfQuads[1])
+    love.graphics.print(tostring(object.width))
+    object:draw()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
     Push:finish()
 end

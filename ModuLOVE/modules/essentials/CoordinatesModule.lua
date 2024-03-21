@@ -1,5 +1,7 @@
-CoordinatesModule = Class { __includes = Modular }
-
+---@class CoordinatesModule: Module implements the fields and methods for objects with x and y axis
+---@field x number
+---@field y number
+CoordinatesModule = Class { __includes = Module }
 
 CoordinatesModule.fieldNames = {
     "x",

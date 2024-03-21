@@ -1,11 +1,12 @@
-DimensionsModule = Class { __includes = Modular }
-
+---@class DimensionsModule: Module implements the fields and methods for objects with width and height
+---@field width number
+---@field height number
+DimensionsModule = Class { __includes = Module }
 
 DimensionsModule.fieldNames = {
     "width",
     "height"
 }
-
 
 function DimensionsModule:init(def)
     self.width = def.width or 0
