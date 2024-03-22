@@ -1,5 +1,3 @@
-Push = require "ModuLOVE.libraries.push"
-
 ---@class AppManagerModule: Module
 AppManagerModule = Class { __includes = Module }
 AppManagerModule.fieldNames = {}

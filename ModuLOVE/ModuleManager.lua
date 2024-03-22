@@ -3,8 +3,12 @@
 ModuleManager = Class()
 
 ---comment
-function ModuleManager:init()
+function ModuleManager:init(modules)
     self.modules = {}
+
+    if modules then
+        self:loadBundle(modules)
+    end
 end
 
 ---Loads single Module into ModuleManager, to use for all Modules intended in the project.

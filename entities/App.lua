@@ -5,11 +5,11 @@ function App:init()
 
     self.seedRandom()
     self.setupWindow {
-        windowTitle = "Test",
-        window_width = 1280,
-        window_height = 720,
-        virtual_width = 256,
-        virtual_height = 144,
+        windowTitle = "ModuLÖVE Framework",
+        window_width = WINDOW_WIDTH,
+        window_height = WINDOW_HEIGHT,
+        virtual_width = VIRTUAL_WIDTH,
+        virtual_height = VIRTUAL_HEIGHT,
     }
 end
 

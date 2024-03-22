@@ -1,1 +1,3 @@
-assets
+/assets/graphics/*
+/assets/audio/*
+/assets/fonts/*
