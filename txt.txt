@@ -9,3 +9,5 @@ To do:
 - Module Creation tutorial
 - Credits to third party libraries
 - Colors in AssetsManagerModule
+- Modules are just classes you can instanciate alone
+- Module methods can be overriden by writting a new one with the same name (:draw())
