@@ -1,18 +1,3 @@
-## ModuLÖVE Framework
-
-! Work In Progress !
-
-ModuleManager enables a modular workflow, simillar to Unity and Unreal, for LÖVE2D.
-With it you can dynamically add or remove classes of object, instanciated or not.
-
-For now, this library is pretty much tied to the project I'm working on, but I wish to make it completely independant from it by the time i start the next one.
-
-Stay tuned!
-
-> You'll find additionnal details on all methods directly in their file.
-
-<br> 
-
 # Get Started
 
 To set up the ModuLÖVE framework, you'll need to require it as a global variable in your main.lua or a dependencies file
