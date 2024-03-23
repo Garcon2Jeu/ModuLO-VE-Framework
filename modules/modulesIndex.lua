@@ -16,3 +16,7 @@ require "modules.essentials.TextureModule"
 require "modules.essentials.StateMachineModule"
 require "modules.essentials.DeltaModule"
 require "modules.essentials.AnimationModule"
+
+---Interactives
+require "modules.interactives.HitboxModule"
+require "modules.interactives.ConsummableModule"

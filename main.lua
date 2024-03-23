@@ -5,21 +5,34 @@ function love.load()
     Assets = AssetsManagerModule()
     Quads = QuadManagerModule()
     Object = Object()
+    TileFoo = Tile()
 end
 
 function love.update(dt)
     Timer.update(dt)
-    Object:update(dt)
     App:update()
+
+    Object:update(dt)
+    TileFoo:updateHitbox()
+
+    if Object:collides(TileFoo) then
+        Object.dy = 1
+        Object.y = TileFoo.y + TileFoo.height + 5
+        TileFoo:onConsume()
+    end
     App:flushKeys()
 end
 
 function love.draw()
     Push:start()
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
-    love.graphics.print(tostring(Object.x))
-    love.graphics.print(tostring(Object.dx), 0, 50)
     Object:draw()
+    Object:drawBox()
+
+    TileFoo:draw()
+    TileFoo:drawPoints()
+
+    love.graphics.print(tostring(Object:collides(TileFoo)))
     ------------------------------------------------------DEBUG-------------------------------------------------------------------
     Push:finish()
 end

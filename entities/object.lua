@@ -5,7 +5,8 @@ local modules = {
     "Dimensions",
     "Texture",
     "Animation",
-    "Delta"
+    "Delta",
+    "Hitbox"
 }
 
 local def = {
@@ -36,6 +37,7 @@ function Object:init()
 end
 
 function Object:update(dt)
+    self:updateHitbox()
     self:dash(dt)
     self:jump(dt)
     self:move(dt)

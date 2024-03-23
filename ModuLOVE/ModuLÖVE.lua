@@ -24,5 +24,7 @@ return ModuleManager {
     ["Dimensions"]   = DimensionsModule,
     ["Texture"]      = TextureModule,
     ["Animation"]    = AnimationModule,
-    ["Delta"]        = DeltaModule
+    ["Delta"]        = DeltaModule,
+    ["Hitbox"]       = HitboxModule,
+    ["Consummable"]  = ConsummableModule,
 }
